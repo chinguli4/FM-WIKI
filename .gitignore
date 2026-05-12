@@ -1,5 +1,9 @@
-# 소스 데이터 레이어 (별도 sparse clone — 공유 불필요)
-raw/
+# sparse clone 레포 (공유 불필요 — 직접 재클론)
+raw/admrule-kr/
+raw/legalize-kr/
+
+# 매뉴얼·행정문서 원본 (git 추적 — 협업자와 공유)
+# raw/manuals/ 는 추적함
 
 # Obsidian 로컬 설정
 .obsidian/
