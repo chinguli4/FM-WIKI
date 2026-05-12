@@ -1,2 +1,14 @@
-# legalize-kr 임시 클론 (법령 원문 참조용, wiki repo에 포함 불필요)
+# 소스 데이터 레이어 (별도 sparse clone — 공유 불필요)
+raw/
+
+# Obsidian 로컬 설정
+.obsidian/
+
+# Obsidian이 자동 생성한 파일
+FM wiki/
+
+# Claude Code 로컬 설정
+.claude/
+
+# 구 경로 (이전 버전 호환)
 legalize-kr-temp/

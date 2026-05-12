@@ -10,17 +10,20 @@
 
 ```
 FM wiki/
-├── raw/                   ← 원본 레이어: 원문 PDF·파일 보관 (불변, LLM이 읽기만)
+├── raw/                   ← 원본 레이어: 불변 소스 데이터 (LLM이 읽기만)
+│   ├── admrule-kr/        ← legalize-kr/admrule-kr sparse clone (산림청 행정규칙)
+│   ├── legalize-kr/       ← legalize-kr/legalize-kr sparse clone (산림청 관련 법률)
+│   └── README.md
 ├── wiki/                  ← 위키 레이어: LLM이 작성·관리
 │   ├── index.md           ← 전체 페이지 카탈로그 (필수 유지)
 │   ├── log.md             ← 인제스트·쿼리·린트 이력 (append-only)
 │   ├── 행정규칙/          ← 원문 wiki화: 행정규칙 원문 → 마크다운 (법령별)
 │   ├── 산림작업/          ← 합성 페이지: 실무 기준·절차 정리 (사업별)
 │   └── 산림계획/          ← 합성 페이지: 경영계획·수확조절 (사업별)
-└── admrule-kr/            ← 참조용 (legalize-kr/admrule-kr 클론)
+└── CLAUDE.md
 ```
 
-**원칙**: `wiki/행정규칙/`은 원문 충실 변환, `wiki/산림작업/`·`wiki/산림계획/`은 실무 관점 합성. 둘은 교차참조하되 섞지 않는다. `raw/`는 향후 원본 파일(PDF 등) 보관용으로 비워둔다.
+**원칙**: `wiki/행정규칙/`은 원문 충실 변환, `wiki/산림작업/`·`wiki/산림계획/`은 실무 관점 합성. 둘은 교차참조하되 섞지 않는다. `raw/`의 소스 레포는 불변 원본이므로 LLM이 읽기만 하고 수정하지 않는다.
 
 ---
 
