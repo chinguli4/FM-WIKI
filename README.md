@@ -26,11 +26,21 @@ git clone --filter=blob:none --sparse https://github.com/legalize-kr/admrule-kr.
 git clone --filter=blob:none --sparse https://github.com/legalize-kr/legalize-kr.git raw/legalize-kr
 ```
 
-## Claude와 함께 사용하기
-
-1. [Claude Code](https://claude.ai/code)에서 이 폴더를 열기
-2. `wiki/index.md`를 참고해 관련 페이지를 파악
-3. 질문하면 Claude가 관련 wiki 페이지와 조항을 인용해 답변
+## Claude와 함께 핸드폰이나 PC에서 사용하기
+<PC에서 사용할때는 무료로 누구나 사용가능>
+1. https://claude.com/download로 접속
+2. Download for Windows 를 클릭해서 설치
+3. 프로그램 실행 후 좌측 상단 </>code를 클릭
+4. 새세션을 실행하고, 채팅창에 "https://github.com/chinguli4/FM-WIKI를 연결해줘" 입력
+5. `wiki/index.md`를 참고해 관련 페이지를 파악
+6. 질문하면 Claude가 관련 wiki 페이지와 조항을 인용해 답변
+   
+<핸드폰에서 사용할때는 Pro 이상 유료사용자만 가능>
+1. 핸드폰에서 Claude App을 설치하고
+2. Claude App에서 </>코드를 선택
+3. 새세션을 실행하고, 채팅창에 "https://github.com/chinguli4/FM-WIKI를 연결해줘" 입력
+4. `wiki/index.md`를 참고해 관련 페이지를 파악
+5. 질문하면 Claude가 관련 wiki 페이지와 조항을 인용해 답변
 
 ## 수록 행정규칙
 
