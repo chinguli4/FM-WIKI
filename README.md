@@ -36,6 +36,10 @@ git clone --filter=blob:none --sparse https://github.com/legalize-kr/legalize-kr
 
 `wiki/index.md` 참조 — 훈령·고시·예규·지침 다수 수록
 
+## 공동작업
+
+수정요청·권한 안내는 [협업 가이드](wiki/협업가이드.md)를 참조하세요.
+
 ## 업데이트
 
 새 행정규칙 인제스트 또는 개정 반영 시 `wiki/log.md`에 이력이 기록됩니다.
