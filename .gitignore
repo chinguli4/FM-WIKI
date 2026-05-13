@@ -19,6 +19,3 @@ legalize-kr-temp/
 
 # 로컬 전용 분석 자료 (push 금지)
 local/
-
-# Projects 업로드용 임시 폴더
-export_flat/
