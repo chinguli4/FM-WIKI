@@ -27,13 +27,14 @@ git clone --filter=blob:none --sparse https://github.com/legalize-kr/legalize-kr
 ```
 
 ## Claude와 함께 핸드폰이나 PC에서 사용하기
-<PC에서 사용할때는 무료로 누구나 사용가능>
-1. https://claude.com/download로 접속
+<PC에서 사용할때는 무료로 사용가능, 유료가 편리하긴 함>
+1. https://claude.com/download 로 접속
 2. Download for Windows 를 클릭해서 설치
-3. 프로그램 실행 후 좌측 상단 </>code를 클릭
-4. 새세션을 실행하고, 채팅창에 "https://github.com/chinguli4/FM-WIKI를 연결해줘" 입력
-5. `wiki/index.md`를 참고해 관련 페이지를 파악
-6. 질문하면 Claude가 관련 wiki 페이지와 조항을 인용해 답변
+3. 무료일 경우는 프로그램에서 채팅방에서 바로 5.번을 실행
+4. 유료일 경우는 프로그램 실행 후 좌측 상단 </>code를 클릭
+5. 새세션을 실행하고, 채팅창에 "https://github.com/chinguli4/FM-WIKI 를 연결해줘" 입력
+6. `wiki/index.md`를 참고해 관련 페이지를 파악
+7. 질문하면 Claude가 관련 wiki 페이지와 조항을 인용해 답변
    
 <핸드폰에서 사용할때는 Pro 이상 유료사용자만 가능>
 1. 핸드폰에서 Claude App을 설치하고
