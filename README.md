@@ -39,7 +39,7 @@ git clone --filter=blob:none --sparse https://github.com/legalize-kr/legalize-kr
 <핸드폰에서 사용할때는 Pro 이상 유료사용자만 가능>
 1. 핸드폰에서 Claude App을 설치하고
 2. Claude App에서 </>코드를 선택
-3. 새세션을 실행하고, 채팅창에 "https://github.com/chinguli4/FM-WIKI를 연결해줘" 입력
+3. 새세션을 실행하고, 채팅창에 "https://github.com/chinguli4/FM-WIKI 를 연결해줘" 입력
 4. `wiki/index.md`를 참고해 관련 페이지를 파악
 5. 질문하면 Claude가 관련 wiki 페이지와 조항을 인용해 답변
 
