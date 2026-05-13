@@ -43,6 +43,17 @@ git clone --filter=blob:none --sparse https://github.com/legalize-kr/legalize-kr
 4. `wiki/index.md`를 참고해 관련 페이지를 파악
 5. 질문하면 Claude가 관련 wiki 페이지와 조항을 인용해 답변
 
+## claude.ai Projects로 팀 공유 (무료 플랜)
+
+GitHub 연결 없이 **claude.ai 무료 계정**에서 wiki를 사용하는 방법입니다.
+
+1. `export-for-project.bat` 더블클릭 → 프로젝트 루트에 `export_flat/` 폴더 생성
+2. [claude.ai](https://claude.ai) → **Projects** → 새 프로젝트 만들기
+3. `export_flat/` 안의 `.md` 파일 전체 선택(Ctrl+A) → 프로젝트에 업로드
+4. 이후 해당 프로젝트에서 질문하면 wiki 내용을 참고해 답변
+
+> wiki가 업데이트될 때마다 bat 파일을 다시 실행하고 프로젝트 파일을 교체 업로드하세요.
+
 ## 수록 행정규칙
 
 `wiki/index.md` 참조 — 훈령·고시·예규·지침 다수 수록
