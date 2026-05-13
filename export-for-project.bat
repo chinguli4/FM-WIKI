@@ -5,9 +5,12 @@ rem --- 레포 위치 탐색 ---
 set "REPO=%~dp0"
 if exist "%REPO%wiki\" goto :found
 
+set "REPO=C:\FM wiki\"
+if exist "%REPO%wiki\" goto :found
+
 echo.
 echo FM-WIKI 레포 폴더 경로를 입력하세요.
-echo 예: C:\Users\홍길동\FM-WIKI
+echo 예: C:\FM wiki
 echo.
 set /p "REPO=경로: "
 if "!REPO!" == "" goto :error
