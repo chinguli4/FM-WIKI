@@ -26,7 +26,16 @@ git clone --filter=blob:none --sparse https://github.com/legalize-kr/admrule-kr.
 git clone --filter=blob:none --sparse https://github.com/legalize-kr/legalize-kr.git raw/legalize-kr
 ```
 
-## Claude와 함께 핸드폰이나 PC에서 사용하기 (유료사용자 전용)
+## Claude와 함께 핸드폰이나 PC에서 사용하기 (무료사용자는)
+
+1. claude 접속(웹), 또는 claude 앱 설치(핸드폰)
+2. [git](https://github.com/chinguli4/FM-WIKI) 접속
+3. Code 버튼 누르고 FM wiki.zip 다운로드
+4. 다운로드 받은 zip파일을 claude 채팅창에 업로드
+6. 이후, 질문하면 Claude가 관련 wiki 페이지와 조항을 인용해 답변
+ 
+
+## Claude와 함께 핸드폰이나 PC에서 사용하기 (유료사용자는)
 
 <PC에서 사용할때>
 1. https://claude.com/download 로 접속
