@@ -60,7 +60,25 @@
       "Bash(Get-ChildItem \"D:\\\\FM wiki\\\\raw\\\\admrule-kr\\\\농림축산식품부\\\\산림청\" -Recurse -Filter \"본문.md\")",
       "Bash(Select-Object FullName)",
       "Bash(Format-Table -AutoSize)",
-      "Bash(Out-String -Width 300)"
+      "Bash(Out-String -Width 300)",
+      "Bash(del export-for-project.bat)",
+      "PowerShell(Get-ChildItem \"D:\\\\FM wiki\\\\raw\\\\law-go-kr\\\\\" -ErrorAction SilentlyContinue | Select-Object -First 20 | ForEach-Object { $_.Name })",
+      "PowerShell(Get-ChildItem \"D:\\\\FM wiki\\\\raw\\\\admrule-kr\\\\농림축산식품부\\\\\" -Recurse | Select-Object Name | ForEach-Object { $_.Name } | Select-String -Pattern \"기계|임업기계|집재|운재\")",
+      "PowerShell(Get-ChildItem \"D:\\\\FM wiki\\\\raw\\\\law-go-kr\\\\행정규칙\\\\\" -Recurse | Select-Object Name | ForEach-Object { $_.Name } | Select-String -Pattern \"기계|임업기계|집재|운재\" | Select-Object -First 20)",
+      "PowerShell(Get-ChildItem \"D:\\\\FM wiki\\\\raw\\\\admrule-kr\\\\농림축산식품부\\\\\" -Recurse | Where-Object { $_.Name -match \"임업기계\" } | ForEach-Object { $_.FullName })",
+      "PowerShell(Get-ChildItem \"D:\\\\FM wiki\\\\raw\\\\admrule-kr\\\\농림축산식품부\\\\산림청\\\\고시\\\\임업기계장비 범위 및 기준\\\\\" | ForEach-Object { $_.Name })",
+      "PowerShell(Get-ChildItem \"D:\\\\FM wiki\\\\raw\\\\admrule-kr\\\\농림축산식품부\\\\산림청\\\\고시\\\\임업기계장비 품질인증 규정\\\\\" | ForEach-Object { $_.Name })",
+      "PowerShell(Get-ChildItem \"D:\\\\FM wiki\\\\raw\\\\admrule-kr\\\\농림축산식품부\\\\산림청\\\\고시\\\\임업기계장비 품질인증 수수료 규정\\\\\" | ForEach-Object { $_.Name })",
+      "PowerShell(Get-ChildItem \"D:\\\\FM wiki\\\\raw\\\\admrule-kr\\\\농림축산식품부\\\\산림청\\\\서부지방산림청\\\\훈령\\\\서부지방산림청 임업기계장비 통합 운영·관리 요령에 관한 규정\\\\\" | ForEach-Object { $_.Name })",
+      "PowerShell(New-Item *)",
+      "Bash(Get-ChildItem -Recurse \"D:\\\\FM wiki\\\\exam-system\")",
+      "Bash(python -c \"import PIL; print\\('pillow ok'\\)\")",
+      "Bash(python -c \"import reportlab; print\\('reportlab ok'\\)\")",
+      "Bash(python make_samples.py)",
+      "Bash(python -m http.server 8000)",
+      "Bash(ngrok version *)",
+      "Bash(mv \"questions/photos/p01.jpg\" \"questions/photos/P01.jpg\")",
+      "Bash(mv \"questions/docs/d01.pdf\" \"questions/docs/D01.pdf\")"
     ]
   }
 }

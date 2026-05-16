@@ -19,3 +19,6 @@ legalize-kr-temp/
 
 # 로컬 전용 분석 자료 (push 금지)
 local/
+
+# 경진대회 시스템 (별도 repo로 관리)
+exam-system/
