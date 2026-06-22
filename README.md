@@ -26,7 +26,7 @@ git clone --filter=blob:none --sparse https://github.com/legalize-kr/admrule-kr.
 git clone --filter=blob:none --sparse https://github.com/legalize-kr/legalize-kr.git raw/legalize-kr
 ```
 
-## Claude와 함께 핸드폰이나 PC에서 사용하기 (무료사용자는)
+## 핸드폰이나 PC에서 사용하기 (무료사용자는)
 
 1. NotebookLM에 접속해서 사용
    https://notebooklm.google.com/notebook/7d2503f8-6b1e-447e-ae6e-85fb5162d229
