@@ -85,36 +85,63 @@ echo "📦 FM Wiki NotebookLM 묶음 빌드"
 echo ""
 
 # 매뉴얼은 단일 파일이 NotebookLM 소스 한도에 걸릴 수 있어 매뉴얼별로 분할한다.
-bundle_manuals_split() {
+# 매뉴얼은 소스 개수를 줄이기 위해 여러 매뉴얼을 묶되, 한 묶음이 50페이지를
+# 넘지 않도록 그리디 방식으로 그룹화한다. 결과: FM_Wiki_매뉴얼(1).md, (2).md ...
+MAX_PAGES_PER_BUNDLE=50
+
+bundle_manuals_grouped() {
   local manual_root="$WIKI_DIR/매뉴얼"
+
+  # 매뉴얼 폴더 목록(이름순) + 각 폴더 페이지 수 수집
+  local -a subs=() pages=()
   while IFS= read -r sub; do
-    local name
-    name="$(basename "$sub")"
-    local output="$OUTPUT_DIR/FM_Wiki_매뉴얼_${name}.md"
+    local n
+    n=$(find "$sub" -name "*.md" | wc -l)
+    subs+=("$sub")
+    pages+=("$n")
+  done < <(find "$manual_root" -mindepth 1 -maxdepth 1 -type d | sort)
+
+  local group=1 group_pages=0
+  local output=""
+
+  start_group() {
+    output="$OUTPUT_DIR/FM_Wiki_매뉴얼(${group}).md"
     {
-      echo "# FM Wiki — 매뉴얼: ${name} (NotebookLM 업로드용)"
+      echo "# FM Wiki — 매뉴얼(${group}) 묶음 (NotebookLM 업로드용)"
       echo ""
-      echo "wiki/매뉴얼/${name}/ 아래 모든 페이지를 합친 묶음입니다."
+      echo "여러 매뉴얼을 묶은 파일입니다 (한 묶음 최대 ${MAX_PAGES_PER_BUNDLE}페이지). 매뉴얼 경계는 \`원본 경로:\` 표시로 구분됩니다."
       echo ""
       echo "- 생성일: $(date '+%Y-%m-%d %H:%M')"
       echo "- 원본 저장소: https://github.com/chinguli4/FM-WIKI"
-      echo ""
-      echo "각 페이지 시작에 \`원본 경로:\` 표시가 있어 GitHub 원문을 추적할 수 있습니다."
     } > "$output"
+    group_pages=0
+  }
 
-    local count=0
+  finish_group() {
+    local size
+    size=$(wc -c < "$output")
+    printf "  ✓ FM_Wiki_매뉴얼(%d).md — %d개 페이지, %d KB\n" "$group" "$group_pages" "$((size / 1024))"
+  }
+
+  start_group
+  local i
+  for i in "${!subs[@]}"; do
+    local sub="${subs[$i]}" p="${pages[$i]}"
+    # 현재 묶음에 담은 게 있고, 추가하면 한도를 넘으면 새 묶음 시작
+    if (( group_pages > 0 && group_pages + p > MAX_PAGES_PER_BUNDLE )); then
+      finish_group
+      group=$((group + 1))
+      start_group
+    fi
     while IFS= read -r file; do
       local rel="${file#$WIKI_DIR/}"
       write_separator "$rel" "$output"
       cat "$file" >> "$output"
       echo "" >> "$output"
-      count=$((count + 1))
     done < <(find "$sub" -name "*.md" | sort)
-
-    local size
-    size=$(wc -c < "$output")
-    printf "  ✓ FM_Wiki_매뉴얼_%s.md — %d개 페이지, %d KB\n" "$name" "$count" "$((size / 1024))"
-  done < <(find "$manual_root" -mindepth 1 -maxdepth 1 -type d | sort)
+    group_pages=$((group_pages + p))
+  done
+  finish_group
 }
 
 # 전체 페이지 카탈로그(index.md)를 NotebookLM이 주제 지도로 쓸 수 있게 단독 묶음으로 포함
@@ -138,7 +165,7 @@ bundle_index() {
 
 bundle_index
 bundle_folder "행정규칙"
-bundle_manuals_split
+bundle_manuals_grouped
 bundle_folder "산림작업"
 bundle_folder "산림계획"
 bundle_folder "법령" "법령체계.md"
@@ -149,6 +176,6 @@ echo "✅ 완료. 출력 위치: bundles/"
 echo ""
 echo "다음 단계:"
 echo "  1. notebooklm.google.com 접속 → 새 노트북 만들기"
-echo "  2. bundles/ 폴더의 모든 .md 파일을 끌어다 놓기 (매뉴얼은 매뉴얼별 분할)"
+echo "  2. bundles/ 폴더의 모든 .md 파일을 끌어다 놓기 (매뉴얼은 매뉴얼(1)·(2)로 묶음)"
 echo "  3. 질문 시작"
 echo ""
