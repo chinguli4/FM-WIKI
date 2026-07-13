@@ -1,7 +1,7 @@
 const GITHUB_BASE = "https://github.com/chinguli4/FM-WIKI/blob/main/wiki/";
 
 const categoryInfo = {
-  산림작업: { icon: "🌲", description: "조림·숲가꾸기·벌채와 현장 시업 기준" },
+  산림작업: { icon: "🌲", description: "조림·숲가꾸기·목재수확과 현장 시업 기준" },
   산림계획: { icon: "🧭", description: "경영계획·자원조사·수확조절 실무" },
   법령: { icon: "⚖", description: "산림 관련 법률·시행령·시행규칙" },
   행정규칙: { icon: "📋", description: "훈령·예규·고시·지침 원문과 기준" },
