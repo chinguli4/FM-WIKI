@@ -26,3 +26,6 @@ wiki/**/*_산출.md
 
 # 경진대회 시스템 (별도 repo로 관리)
 exam-system/
+
+# 산림경영 Wiki 웹 포털 빌드 결과 (Netlify에서 자동 생성)
+web/dist/
