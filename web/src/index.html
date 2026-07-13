@@ -58,14 +58,20 @@
             </p>
 
             <form class="hero-search" id="search-form" role="search">
-              <label class="sr-only" for="search-input">위키 통합검색</label>
-              <span class="search-icon" aria-hidden="true"></span>
-              <input
-                id="search-input"
-                type="search"
-                autocomplete="off"
-                placeholder="예: 솎아베기 기준, 산림기술자 이중취업, 국유림 사용허가"
-              />
+              <label class="search-label" for="search-input">
+                <strong>위키 통합검색</strong>
+                <small>업무 키워드나 궁금한 내용을 입력하세요.</small>
+              </label>
+              <div class="search-input-wrap">
+                <span class="search-icon" aria-hidden="true"></span>
+                <input
+                  id="search-input"
+                  type="search"
+                  autocomplete="off"
+                  aria-label="위키 통합검색"
+                  placeholder="예: 솎아베기 기준, 산림기술자 이중취업, 국유림 사용허가"
+                />
+              </div>
               <button type="submit">검색</button>
             </form>
             <div class="quick-search" aria-label="추천 검색어">
@@ -175,4 +181,3 @@
     <noscript>이 사이트의 검색과 문서 열람 기능을 사용하려면 JavaScript를 켜주세요.</noscript>
   </body>
 </html>
-

@@ -413,6 +413,36 @@ function bindEvents() {
   window.addEventListener("hashchange", openFromHash);
 }
 
+function setupSearchExamples() {
+  const examples = ["솎아베기 기준", "국유림 사용허가", "산불피해지 복구", "산림기술자 이중취업"];
+  const desktopPlaceholder = "예: 솎아베기 기준, 산림기술자 이중취업, 국유림 사용허가";
+  const mobileViewport = window.matchMedia("(max-width: 680px)");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let exampleIndex = 0;
+
+  const updatePlaceholder = () => {
+    if (elements.searchInput.value || document.activeElement === elements.searchInput) return;
+    elements.searchInput.placeholder = mobileViewport.matches
+      ? `예: ${examples[exampleIndex]}`
+      : desktopPlaceholder;
+  };
+
+  elements.searchInput.addEventListener("focus", () => {
+    if (mobileViewport.matches && !elements.searchInput.value) elements.searchInput.placeholder = "검색어를 입력하세요";
+  });
+  elements.searchInput.addEventListener("blur", updatePlaceholder);
+  mobileViewport.addEventListener("change", updatePlaceholder);
+  updatePlaceholder();
+
+  if (!reducedMotion) {
+    window.setInterval(() => {
+      if (!mobileViewport.matches || elements.searchInput.value || document.activeElement === elements.searchInput) return;
+      exampleIndex = (exampleIndex + 1) % examples.length;
+      updatePlaceholder();
+    }, 3200);
+  }
+}
+
 async function initialize() {
   try {
     const response = await fetch("./data/wiki.json");
@@ -428,6 +458,7 @@ async function initialize() {
     renderCategories();
     renderDocuments();
     bindEvents();
+    setupSearchExamples();
     openFromHash();
   } catch (error) {
     elements.documentGrid.innerHTML = `<div class="empty-state"><strong>문서를 불러오지 못했습니다.</strong><span>${escapeHtml(error.message)}</span></div>`;
