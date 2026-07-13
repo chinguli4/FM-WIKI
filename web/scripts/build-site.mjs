@@ -127,7 +127,6 @@ async function buildIndex() {
     source: "https://github.com/chinguli4/FM-WIKI",
     total: documents.length,
     categories,
-    documents,
   };
 }
 

@@ -78,42 +78,28 @@
               검증된 문서를 업무 흐름에 맞게 모았습니다.
             </p>
 
-            <form class="hero-search" id="search-form" role="search">
-              <label class="search-label" for="search-input">
-                <strong>위키 통합검색</strong>
-                <small>업무 키워드나 궁금한 내용을 입력하세요.</small>
-              </label>
-              <div class="search-input-wrap">
-                <span class="search-icon" aria-hidden="true"></span>
-                <input
-                  id="search-input"
-                  type="search"
-                  autocomplete="off"
-                  aria-label="위키 통합검색"
-                  placeholder="예: 솎아베기 기준, 산림기술자 이중취업, 국유림 사용허가"
-                />
-              </div>
-              <button type="submit">검색</button>
-            </form>
-            <div class="quick-search" aria-label="추천 검색어">
-              <span>추천</span>
-              <button type="button" data-query="솎아베기 기준">솎아베기 기준</button>
-              <button type="button" data-query="국유림 사용허가">국유림 사용허가</button>
-              <button type="button" data-query="산불피해지 복구">산불피해지 복구</button>
-              <button type="button" data-query="산림기술자 이중취업">자격대여·이중취업</button>
+            <div class="hero-actions">
+              <a
+                class="button hero-primary"
+                href="https://notebooklm.google.com/notebook/7d2503f8-6b1e-447e-ae6e-85fb5162d229"
+                target="_blank"
+                rel="noreferrer"
+              ><span aria-hidden="true">✦</span> NotebookLM에서 검색 시작</a>
+              <a class="button hero-secondary" href="#categories-section">수록 정보 둘러보기</a>
             </div>
+            <p class="hero-guide">질문과 검색은 공개 NotebookLM에서 바로 시작됩니다.</p>
           </div>
 
           <aside class="hero-panel" aria-label="위키 현황">
             <div class="panel-topline"><span>LIVE WIKI</span><i></i></div>
-            <p class="panel-label">현재 탐색 가능한 자료</p>
+            <p class="panel-label">현재 Wiki에 기록된 자료</p>
             <strong class="panel-count"><span id="document-count">—</span><small>개 문서</small></strong>
             <div class="panel-divider"></div>
             <dl class="panel-stats">
-              <div><dt>실무 분야</dt><dd id="category-count">7</dd></div>
+              <div><dt>실무 분야</dt><dd id="category-count">8</dd></div>
               <div><dt>원문 갱신</dt><dd>GitHub 연동</dd></div>
             </dl>
-            <p class="panel-note"><span aria-hidden="true">✓</span> 원문 경로와 판단 근거를 함께 제공합니다.</p>
+            <p class="panel-note"><span aria-hidden="true">✓</span> 자료 범위를 확인한 뒤 AI에게 바로 질문할 수 있습니다.</p>
           </aside>
         </div>
       </section>
@@ -122,31 +108,56 @@
         <div class="section-heading">
           <div>
             <p class="section-kicker">PRACTICE AREAS</p>
-            <h2>업무 분야별로 찾아보기</h2>
+            <h2>현재 Wiki가 다루는 분야</h2>
           </div>
-          <p>카드를 선택하면 해당 분야의 문서만 모아볼 수 있습니다.</p>
+          <p>Wiki에 기록된 자료의 범위와 분야별 문서 수를 한눈에 확인할 수 있습니다.</p>
         </div>
         <div class="category-grid" id="category-grid" aria-live="polite">
           <div class="loading-card"></div><div class="loading-card"></div><div class="loading-card"></div>
         </div>
       </section>
 
-      <section class="section section-soft" id="documents-section">
+      <section class="section section-soft" id="coverage-section">
         <div class="shell">
-          <div class="results-heading">
+          <div class="section-heading">
             <div>
-              <p class="section-kicker" id="results-kicker">QUICK ACCESS</p>
-              <h2 id="results-title">주요 문서 바로가기</h2>
+              <p class="section-kicker">KNOWLEDGE COVERAGE</p>
+              <h2>이런 질문의 근거를 담고 있습니다</h2>
             </div>
-            <div class="results-tools">
-              <span id="results-count" aria-live="polite"></span>
-              <button class="filter-clear" id="filter-clear" type="button" hidden>전체 보기</button>
-            </div>
+            <p>현장 시업부터 행정 판단과 근거 자료까지, 실무 흐름에 맞춰 지식을 모았습니다.</p>
           </div>
-          <div class="document-grid" id="document-grid" aria-live="polite">
-            <p class="loading-message">문서 목록을 준비하고 있습니다.</p>
+          <div class="coverage-grid">
+            <article class="coverage-card">
+              <span class="coverage-number">01</span>
+              <h3>현장 기준</h3>
+              <p>산림사업을 계획하고 실행할 때 필요한 작업 기준과 절차</p>
+              <ul>
+                <li>조림·숲가꾸기</li>
+                <li>목재수확·운재로</li>
+                <li>작업 안전·현장 관리</li>
+              </ul>
+            </article>
+            <article class="coverage-card">
+              <span class="coverage-number">02</span>
+              <h3>행정 판단</h3>
+              <p>허가·계약·관리 업무에서 확인해야 할 실무 판단 기준</p>
+              <ul>
+                <li>인허가·행정처분</li>
+                <li>계약·자격관리</li>
+                <li>국유재산 관리</li>
+              </ul>
+            </article>
+            <article class="coverage-card">
+              <span class="coverage-number">03</span>
+              <h3>근거 자료</h3>
+              <p>답변의 출처가 되는 법령과 행정규칙, 실무 매뉴얼</p>
+              <ul>
+                <li>법률·시행령·시행규칙</li>
+                <li>훈령·예규·고시·지침</li>
+                <li>매뉴얼·편람</li>
+              </ul>
+            </article>
           </div>
-          <button class="load-more" id="load-more" type="button" hidden>문서 더 보기</button>
         </div>
       </section>
 
@@ -155,7 +166,7 @@
           <div class="ai-symbol" aria-hidden="true">✦</div>
           <div class="ai-copy">
             <p class="section-kicker">ASK WITH NOTEBOOKLM</p>
-            <h2>문장을 입력해 AI에게 물어보세요.</h2>
+            <h2>궁금한 내용은 AI에게 바로 물어보세요.</h2>
             <p>
               공개 노트북은 Google 계정으로 이용할 수 있습니다. 이 대문에서 자료의 범위를 살펴본 뒤,
               복잡한 비교나 종합 판단은 NotebookLM에서 질문하세요.
@@ -166,7 +177,7 @@
             href="https://notebooklm.google.com/notebook/7d2503f8-6b1e-447e-ae6e-85fb5162d229"
             target="_blank"
             rel="noreferrer"
-          >NotebookLM 열기 <span aria-hidden="true">↗</span></a>
+          >검색·질문 시작 <span aria-hidden="true">↗</span></a>
         </div>
       </section>
     </main>
@@ -180,25 +191,12 @@
         <div class="footer-links">
           <a href="https://github.com/chinguli4/FM-WIKI" target="_blank" rel="noreferrer">GitHub</a>
           <a href="#categories-section">업무 분야</a>
-          <a href="#documents-section">문서 찾기</a>
+          <a href="#coverage-section">수록 정보</a>
+          <a href="https://notebooklm.google.com/notebook/7d2503f8-6b1e-447e-ae6e-85fb5162d229" target="_blank" rel="noreferrer">검색 시작</a>
         </div>
       </div>
     </footer>
 
-    <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
-    <aside class="document-drawer" id="document-drawer" aria-hidden="true" aria-labelledby="drawer-title">
-      <div class="drawer-header">
-        <button class="drawer-close" id="drawer-close" type="button" aria-label="문서 닫기">←</button>
-        <div>
-          <p id="drawer-category"></p>
-          <h2 id="drawer-title">문서</h2>
-        </div>
-        <a id="drawer-github" href="#" target="_blank" rel="noreferrer">GitHub 원문 ↗</a>
-      </div>
-      <div class="drawer-path" id="drawer-path"></div>
-      <article class="markdown-body" id="drawer-body"></article>
-    </aside>
-
-    <noscript>이 사이트의 검색과 문서 열람 기능을 사용하려면 JavaScript를 켜주세요.</noscript>
+    <noscript>분야별 문서 수를 표시하려면 JavaScript를 켜주세요. NotebookLM 이동 링크는 그대로 사용할 수 있습니다.</noscript>
   </body>
 </html>
