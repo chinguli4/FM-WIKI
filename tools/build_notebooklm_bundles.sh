@@ -11,6 +11,7 @@
 #   - FM_Wiki_산림계획.md
 #   - FM_Wiki_법령.md
 #   - FM_Wiki_타부처법령.md
+#   - FM_Wiki_임업경영체.md
 #
 # 생성된 파일을 NotebookLM (notebooklm.google.com) 새 노트북에
 # 끌어다 놓으면 위키 전체를 한 번에 올릴 수 있습니다.
@@ -170,6 +171,7 @@ bundle_folder "산림작업"
 bundle_folder "산림계획"
 bundle_folder "법령" "법령체계.md"
 bundle_folder "타부처법령"
+bundle_folder "임업경영체"
 
 echo ""
 echo "✅ 완료. 출력 위치: bundles/"
